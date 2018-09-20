@@ -1,3 +1,6 @@
+/*
+Project 1a main file. Written by Andrew Ricci and Julian Perez.
+*/
 #include <cstdlib>
 #include <vector>
 #include <iostream>
@@ -59,10 +62,10 @@ int main(){
 	Code Code1(5, 7); //initializes code with vector of length 5 and values 0-6
 	Code1.setGuess(Guess1); //sets guess to given guess value
 	Code1.setRandomCode(); //generates secret code
-	vector<int> sekret = Code1.Secret; //sets class vectors to local vectors (delete)
+	vector<int> sekret = Code1.Secret; //sets class vectors to local vectors (display purposes only)
 	vector<int> goose = Code1.Guess;
 
-	for (vector<int>::iterator it = sekret.begin(); it != sekret.end(); ++it){ //prints random and guess vectors (delete)
+	for (vector<int>::iterator it = sekret.begin(); it != sekret.end(); ++it){ //prints random and guess vectors (display purposes only)
 		cout << *it << ' ';
 	}
 	cout << '\n';
