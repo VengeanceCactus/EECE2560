@@ -10,6 +10,11 @@ Project 1a main file. Written by Andrew Ricci and Julian Perez.
 
 using namespace std;
 
+Code::Code(int n1, int m1){ //constructor, sets values in main function to n and m
+    n = n1;
+    m = m1;
+}
+
 void Code::setRandomCode(void){
 	while (!Secret.empty()){ //deletes any existing secret values
 		Secret.pop_back();
