@@ -6,7 +6,7 @@ Project 1a main file. Written by Andrew Ricci and Julian Perez.
 #include <iostream>
 #include <ctime>
 #include <algorithm>
-#include "project1.h"
+#include "code.h"
 
 using namespace std;
 

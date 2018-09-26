@@ -1,4 +1,4 @@
-/* Project 1a header file. Written by Andrew Ricci and Julian Perez.
+/* Code header file. Written by Andrew Ricci and Julian Perez.
 */
 #include <cstdlib>
 #include <vector>
