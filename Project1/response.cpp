@@ -7,18 +7,20 @@
 
 using namespace std;
 
-void CorrectSet(void){
+Response::Response();
+
+void CorrectSet(cor1){
     cor = cor1;
 }
 
-void IncorrectSet(void){
+void IncorrectSet(incor1){
     incor = incor1;
 }
 
-void CorrectGet(void){
+int CorrectGet(void){
     return cor;
 }
 
-void IncorrectGet(void){
+int IncorrectGet(void){
     return incor;
 }
