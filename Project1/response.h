@@ -1,3 +1,7 @@
+/*
+Response header file. Written by Andrew Ricci and Julian Perez.
+*/
+
 #include <cstdlib>
 #include <vector>
 #include <iostream>

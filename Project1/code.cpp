@@ -1,5 +1,5 @@
 /*
-Project 1a main file. Written by Andrew Ricci and Julian Perez.
+Project 1 Code file. Written by Andrew Ricci and Julian Perez.
 */
 #include <cstdlib>
 #include <vector>
@@ -10,8 +10,7 @@ Project 1a main file. Written by Andrew Ricci and Julian Perez.
 
 using namespace std;
 
-Code::Code(){
-} //constructor, sets values in main function to n and m
+Code::Code(){} //constructor
 
 void Code::setRandomCode(int n1, int m1){
     n = n1;
@@ -23,7 +22,7 @@ void Code::setRandomCode(int n1, int m1){
 	for (int i = 0; i < n; i++){
 		Secret.push_back(rand() % m); //pushes n random values to vector
 	}
-	initSecret = Secret;
+	initSecret = Secret; //saves initial unmarked value
 }
 
 void Code::setGuess(int gs[]){
@@ -33,7 +32,7 @@ void Code::setGuess(int gs[]){
 	for (int i = 0; i < n; i++){ //pushes guess values to guess vector
 		Guess.push_back(gs[i]);
 	}
-	initGuess = Guess;
+	initGuess = Guess; //saves initial unmarked value
 }
 
 int Code::checkCorrect(void){
@@ -60,7 +59,7 @@ int Code::checkIncorrect(void){
 			}
 		}
 	}
-	Secret = initSecret;
+	Secret = initSecret; //returns secret and guess to initial values before marking
 	Guess = initGuess;
 	return incorrect;
 }
