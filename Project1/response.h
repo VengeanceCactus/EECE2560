@@ -13,13 +13,13 @@ class Response{
 
         Response();
 
-        void CorrectSet(cor1);
-        void IncorrectSet(incor1);
-        int CorrectGet();
-        int IncorrectGet();
+        void correctSet(int cor1);
+        void incorrectSet(int incor1);
+        int correctGet();
+        int incorrectGet();
 
-        Response operator=={
+        /*Response operator=={
         }
         Response operator<<{
-        }
-}
+        }*/
+};
