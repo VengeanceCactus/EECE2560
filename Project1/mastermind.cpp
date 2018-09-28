@@ -66,10 +66,10 @@ void Mastermind::playGame(){
             cout<<"You win!";
             break;
 		}
+	}
 	for (int tries = 0; tries = 10; tries++){
 		cout<<"Sorry, you've used all your tries. You lose!";
 		break;
 	}
-        }
-    }
 }
+
