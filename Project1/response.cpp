@@ -11,23 +11,20 @@ Project 1 response file. Written by Andrew Ricci and Julian Perez.
 
 using namespace std;
 
-Response::Response();
+Response::Response(){}
 
-int cor1, cor, incor1, incor;
-
-void CorrectSet(cor1){
-	Code1.checkCorrect(*correct);
-	correct == cor1;
+void CorrectSet(int cor1){
+    //cor = cor1;
 }
-void IncorrectSet(incor1){
-	Code1.checkIncorrect(*incorrect);
-	incorrect == incor1;
+
+void IncorrectSet(int incor1){
+    //incor = incor1;
 }
 
 int CorrectGet(void){
-    return cor1;
+    //return cor;
 }
 
 int IncorrectGet(void){
-    return incor1;
+    //return incor;
 }

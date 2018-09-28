@@ -8,7 +8,7 @@ Mastermind header file. Written by Andrew Ricci and Julian Perez
 #include <ctime>
 #include <algorithm>
 #include "code.h"
-//#include "response.h"
+#include "response.h"
 
 using namespace std;
 
@@ -23,7 +23,6 @@ public:
     Mastermind(int n1, int m1);
 
     Code Code1;
-    //Response Res1;
 
     void printSecretCode();
     void humanGuess();
