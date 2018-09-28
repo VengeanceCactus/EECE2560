@@ -65,6 +65,11 @@ void Mastermind::playGame(){
         if(complete == true){ //breaks loop if all numbers match
             cout<<"You win!";
             break;
+		}
+	for (int tries = 0; tries = 10; tries++){
+		cout<<"Sorry, you've used all your tries. You lose!";
+		break;
+	}
         }
     }
 }

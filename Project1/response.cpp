@@ -13,18 +13,21 @@ using namespace std;
 
 Response::Response();
 
-void CorrectSet(cor1){
-    cor = cor1;
-}
+int cor1, cor, incor1, incor;
 
+void CorrectSet(cor1){
+	Code1.checkCorrect(*correct);
+	correct == cor1;
+}
 void IncorrectSet(incor1){
-    incor = incor1;
+	Code1.checkIncorrect(*incorrect);
+	incorrect == incor1;
 }
 
 int CorrectGet(void){
-    return cor;
+    return cor1;
 }
 
 int IncorrectGet(void){
-    return incor;
+    return incor1;
 }

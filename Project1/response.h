@@ -21,9 +21,4 @@ class Response{
         void incorrectSet(int incor1);
         int correctGet();
         int incorrectGet();
-
-        /*Response operator=={
-        }
-        Response operator<<{
-        }*/
-};
+};;
