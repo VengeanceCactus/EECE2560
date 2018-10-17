@@ -35,6 +35,11 @@ Node * Deck::getFirst(){
     return first;
 }
 
+//gets last card from deck
+Node * Deck:: getLast(){
+	return last;
+}
+
 // prints entire deck in order
 void Deck::printDeck(){
     //sets new node to first card
@@ -72,5 +77,31 @@ void Deck::shuffleDeck(){
         prev = cur;
     }
     first = prev;
+}
 
+//sets all cards != NULL to d, then deletes d
+void Deck::deleteDeck(){
+	while (first != NULL){
+		d = first;
+		first = first -> next;
+		delete d;
+	}
+}
+
+//returns top card in deck and removes it from the deck
+void Deck::deal(){
+	if (first && first -> next){
+		Node *newFirst = first -> next;
+		Node *cur = newFirst;
+	}
+	return first;
+}
+
+//replaces dealed card at the bottom of the deck
+void Deck::replace(){
+	while (cur -> next){
+		cur = cur -> next;
+		first -> next = NULL;
+		cur -> next = first;
+		first = newFirst;
 }

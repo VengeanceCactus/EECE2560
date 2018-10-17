@@ -15,4 +15,7 @@ public:
 
     void printDeck();
     void shuffleDeck();
+    void deleteDeck();
+    void deal();
+    void replace();
 };

@@ -80,3 +80,7 @@ ostream& operator<<(ostream& print, Card& Card1){
     return print;
 }
 
+//copy constructor and overloaded assignment (INCOMPLETE)
+template <typename T>
+dynamicClass<int> card1(dynamicClass<T>)
+	
