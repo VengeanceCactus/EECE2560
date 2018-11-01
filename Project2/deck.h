@@ -1,5 +1,5 @@
 /*Deck Header
-Written by Andrew Ricci */
+Written by Andrew Ricci and Julian Perez*/
 
 #include "node.h"
 #include <iostream>
@@ -11,11 +11,13 @@ private:
     Node* first;
 public:
     Deck();
+    ~Deck();
     Node* getFirst();
+    Node* deleteFirst();
 
+    Card deal();
+    void replace(Card card1);
     void printDeck();
+    void print24();
     void shuffleDeck();
-    void deleteDeck();
-    void deal();
-    void replace();
 };

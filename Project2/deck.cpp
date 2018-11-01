@@ -1,5 +1,5 @@
 /*Deck Class
-Written by Andrew Ricci */
+Written by Andrew Ricci and Julian Perez*/
 
 #include "deck.h"
 #include <iostream>
@@ -30,14 +30,15 @@ Deck::Deck(){
     first = prev;
 }
 
-//gets first card from deck
-Node * Deck::getFirst(){
-    return first;
-}
+Deck::~Deck(){
+    Node *del;
 
-//gets last card from deck
-Node * Deck:: getLast(){
-	return last;
+    for (int i = 0; i <52; i++){
+        del = first ->next;
+        delete first;
+        first = del;
+    }
+
 }
 
 // prints entire deck in order
@@ -53,6 +54,16 @@ void Deck::printDeck(){
         print = print ->next;
     }
 }
+
+//for display purposes
+void Deck::print24(){
+    Node *print = first;
+    for (int i = 0; i < 24; i++){
+        cout << print ->card;
+        print = print ->next;
+    }
+}
+
 //places cards in random order
 void Deck::shuffleDeck(){
     //first creates a new vector to store list
@@ -77,31 +88,27 @@ void Deck::shuffleDeck(){
         prev = cur;
     }
     first = prev;
+
 }
 
-//sets all cards != NULL to d, then deletes d
-void Deck::deleteDeck(){
-	while (first != NULL){
-		d = first;
-		first = first -> next;
-		delete d;
-	}
+Card Deck::deal(){
+    //sets new node to first card in deck
+    Node* print = first;
+    //sets new first value to next card
+    first = print ->next;
+    //returns the value of the card at top
+    return print ->card;
 }
 
-//returns top card in deck and removes it from the deck
-void Deck::deal(){
-	if (first && first -> next){
-		Node *newFirst = first -> next;
-		Node *cur = newFirst;
-	}
-	return first;
-}
-
-//replaces dealed card at the bottom of the deck
-void Deck::replace(){
-	while (cur -> next){
-		cur = cur -> next;
-		first -> next = NULL;
-		cur -> next = first;
-		first = newFirst;
+void Deck::replace(Card card1){
+    //creates node that will be new last card
+    Node *end = new Node(card1, NULL);
+    //sets another node to first card
+    Node *link = first;
+    //scans through cards until end of deck
+    while(link ->next != NULL){
+        link = link ->next;
+    }
+    //sets first card to end of linked list
+    link ->next = end;
 }

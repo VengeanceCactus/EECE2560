@@ -1,5 +1,5 @@
 /*Card Header
-Written by Andrew Ricci */
+Written by Andrew Ricci and Julian Perez*/
 
 #include <iostream>
 

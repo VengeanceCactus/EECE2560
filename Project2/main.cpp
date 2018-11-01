@@ -1,61 +1,70 @@
 /*Main Function
-Written by Andrew Ricci */
+Written by Andrew Ricci and Julian Perez*/
 
 #include "deck.h"
 #include <iostream>
 
 using namespace std;
 
+void playFlip();
+
 int main(){
-    Deck deck1;
-    cout << "Deck in order:" <<endl;
-    deck1.printDeck();
-    deck1.shuffleDeck();
-    cout <<"\n";
-    cout << "Randomly shuffled deck: "<<endl;
-    deck1.printDeck();
     playFlip();
 }
 
-//global function for printing results
 void playFlip(){
-	
-	for (int F = 0; F < 24; F++){ //gives user 24 draws
-    	cout << "Press F to flip your next card.";
-    	cin >> F;
-		deck1.deal();
-    	deck1.replace();
-        card.getValue();
-        card.getSuit();
-		
-		for (int points = 0; points < 100; points++){
-		    if (cv = 1){
-		    	points = points + 10;
-			}
-			
-			if (cv = 11 || cv = 12 || cv = 13){
-				points = points + 5;
-			}
-			
-			if (cv = 8 || cv = 9 || cv = 10){
-				points = points;
-			}
-			
-			if (cv = 7){
-				points = 0;
-			}
-			
-			if (cv = 2 || cv = 3 || cv = 4 || cv = 5 || cv = 6){
-				points = points / 2;
-			}
-			
-			if (st = H){
-				points = points + 1;
-			}
-		}
-        
-		cout << "You've earned " << points << "points.";
-		
-		break;	
+    //constructs deck and shuffles three times
+    Deck deck1;
+    deck1.shuffleDeck();
+    deck1.shuffleDeck();
+    deck1.shuffleDeck();
+    //prints out the first 24 cards for test purposes
+    deck1.print24();
+    //sets variables to track score and user input
+    char input;
+    double score = 0;
+
+    cout << "Welcome to Flip! 24 cards have been dealt."<<endl;
+    cout << "Flip cards until 24 or you wish to stop."<<endl;
+    cout << "Press f and enter to flip the next card"<<endl;
+    cout << "Enter any other value to end the game"<<endl;
+
+    //takes user input
+    cin >> input;
+
+    //game continues while user inputs f
+    while(input == 'f'){
+        //creates card and sets it as dealed card
+        Card card1 = deck1.deal();
+        //scores cards as determined by game rules
+        if (card1.getValue() == 1){
+            score += 10;
+        }
+        else if(card1.getValue() <= 13 && card1.getValue() >= 11){
+            score += 5;
+        }
+        else if(card1.getValue() <= 10 && card1.getValue() >= 8){
+            score += 0;
+        }
+        else if(card1.getValue() == 7){
+            score = score / 2;
+        }
+        else if(card1.getValue() <= 6 && card1.getValue() >= 2){
+            score = 0;
+        }
+
+        if(card1.getSuit() == 'H'){
+            score += 1;
+        }
+
+        //returns card and the user's current score
+        cout << "Card flipped: " << card1 << "\n Score: " << score << endl;
+        //removes card from top of the deck
+        deck1.replace(card1);
+        //takes next input to continue or end game
+        cin >> input;
     }
+    cout <<"\nGame over! Your final score is: " << score << endl;
+
+    deck1.printDeck();
 }
